@@ -4,34 +4,33 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
-  initializing: function () {
+  initializing: function() {
     this.pkg = require('../package.json');
   },
 
-  prompting: function () {
-    var done = this.async();
-
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the magnificent' + chalk.red('SimplePage') + ' generator!'
-    ));
-
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
-
-    this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
-
-      done();
-    }.bind(this));
-  },
 
   writing: {
-    app: function () {
+    app: function() {
+      this.fs.copy(
+        this.templatePath('_app.js'),
+        this.destinationPath('app/javascripts/app.js')
+      );
+
+      this.fs.copy(
+        this.templatePath('_app.css'),
+        this.destinationPath('app/stylesheets/app.css')
+      );
+
+      this.fs.copy(
+        this.templatePath('_index.html'),
+        this.destinationPath('app/index.html')
+      );
+
+      this.fs.copy(
+        this.templatePath('_gulpfile.js'),
+        this.destinationPath('gulpfile.js')
+      );
+
       this.fs.copy(
         this.templatePath('_package.json'),
         this.destinationPath('package.json')
@@ -42,7 +41,7 @@ module.exports = yeoman.generators.Base.extend({
       );
     },
 
-    projectfiles: function () {
+    projectfiles: function() {
       this.fs.copy(
         this.templatePath('editorconfig'),
         this.destinationPath('.editorconfig')
@@ -54,7 +53,7 @@ module.exports = yeoman.generators.Base.extend({
     }
   },
 
-  install: function () {
+  install: function() {
     this.installDependencies({
       skipInstall: this.options['skip-install']
     });

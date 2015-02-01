@@ -1,5 +1,8 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+	"name": "package",
+	"version": "0.0.1",
+	"dependencies": {
+		"browser-sync": "^2.0.0-rc3",
+		"gulp": "^3.8.10"
+	}
 }
