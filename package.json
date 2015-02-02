@@ -1,7 +1,7 @@
 {
   "name": "generator-simple-page",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.0.1",
+  "description": "simple web page generator",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "ocowchun/generator-simple-page",
