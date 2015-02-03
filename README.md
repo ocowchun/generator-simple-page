@@ -1,18 +1,12 @@
 # generator-simple-page 
 
-> simple web page generator
+> [Yeoman](http://yeoman.io) generator for build web
 
-
-## Getting Started
-This is a super simple generator for web develop.
-
-```bash
-mkdir app-name
-cd app-name
-yo simple-page
-gulp
-```
-
+##Getting Started
+* Install: `npm install -g generator-simple-page`
+* Make a new directory, and cd into it:
+* Run `yo simple-page`
+* Run `gulp` for building and preview
 
 ## License
 
